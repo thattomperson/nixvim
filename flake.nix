@@ -64,7 +64,7 @@
 	  plugins.lspsaga.enable = true;
 	  plugins.lsp = {
 	    enable = true;
-	    servers.intelephense.enable = true;
+	    #servers.intelephense.enable = true;
 	  };
 	  plugins.gitsigns.enable = true;
 	  plugins.neo-tree = {
