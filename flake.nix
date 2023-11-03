@@ -64,7 +64,7 @@
 	  plugins.lspsaga.enable = true;
 	  plugins.lsp = {
 	    enable = true;
-	    #servers.intelephense.enable = true;
+	    servers.phpactor.enable = true;
 	  };
 	  plugins.gitsigns.enable = true;
 	  plugins.neo-tree = {
@@ -101,7 +101,7 @@
       };
 
       packages = {
-      	# phpactor = pkgs.phpactor;
+      	phpactor = pkgs.phpactor;
         # Lets you run `nix run .` to start nixvim
         default = nvim;
       };
