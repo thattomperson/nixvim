@@ -33,7 +33,6 @@
     ensureInstalled = "all";
   };
   plugins.which-key.enable = true;
-  plugins.noice.enable = true;
   plugins.project-nvim = {
     enable = true;
     showHidden = true;
