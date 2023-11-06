@@ -36,6 +36,7 @@
       wildmode = "longest:full,full";
       winminwidth = 5;
       wrap = false;
+
     };
   };
   imports = [
@@ -45,5 +46,6 @@
     ./keymaps.nix
     ./theme.nix
     ./telescope.nix
+    ./autocmds.nix
   ];
 }
