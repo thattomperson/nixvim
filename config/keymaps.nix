@@ -1,8 +1,5 @@
 {
-  number = true;
-  #globals.mapleader = " ";
-  relativenumber = true;
-  colorschemes.catppuccin.enable = true;
+  globals.mapleader = " ";
   keymaps = [
     {
       mode = "n";

@@ -1,6 +1,10 @@
 { self, pkgs, ... }: {
-  options = {
-    # Import all your configuration modules here
-    imports = [ ./bufferline.nix ./options.nix ./cmp.nix ./stuff.nix ];
+  config = {
+    options = {
+      number = true;
+      relativenumber = true;
+    };
   };
+  imports =
+    [ ./bufferline.nix ./stuff.nix ./cmp.nix ./keymaps.nix ./theme.nix ];
 }
