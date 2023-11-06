@@ -5,6 +5,12 @@
       relativenumber = true;
     };
   };
-  imports =
-    [ ./bufferline.nix ./stuff.nix ./cmp.nix ./keymaps.nix ./theme.nix ];
+  imports = [
+    ./bufferline.nix
+    ./stuff.nix
+    ./completion.nix
+    ./keymaps.nix
+    ./theme.nix
+    ./telescope.nix
+  ];
 }

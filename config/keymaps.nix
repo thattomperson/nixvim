@@ -28,5 +28,15 @@
         desc = "Find Files";
       };
     }
+    {
+      mode = "t";
+      key = "<ESC><ESC>";
+      action = ''
+        function()
+          require('toggleterm.ui').stopinsert()
+        end
+      '';
+      lua = true;
+    }
   ];
 }

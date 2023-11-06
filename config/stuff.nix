@@ -5,13 +5,27 @@
   plugins.lsp = {
     enable = true;
     servers.phpactor.enable = true;
+    servers.nil_ls.enable = true;
+    keymaps = {
+      lspBuf = {
+        "K" = "hover";
+        "<C-k>" = "signature_help";
+        "gr" = "references";
+        "gD" = "declaration";
+        "gd" = "definition";
+        "gi" = "implementation";
+        "gt" = "type_definition";
+        "<leader>ca" = "code_action";
+        "<leader>re" = "rename";
+        "<leader>f" = "format";
+      };
+    };
   };
   plugins.gitsigns.enable = true;
   plugins.neo-tree = {
     enable = true;
     window.position = "float";
   };
-  plugins.telescope.enable = true;
   plugins.startify.enable = true;
   plugins.toggleterm.enable = true;
   plugins.treesitter = {
@@ -25,5 +39,5 @@
     showHidden = true;
     patterns = [ ".git" ];
   };
-  #extraPlugins = with pkgs.vimPlugins; [ vim-sleuth ];
+  extraPlugins = with pkgs.vimPlugins; [ vim-sleuth ];
 }
