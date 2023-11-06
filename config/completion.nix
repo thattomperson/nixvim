@@ -3,6 +3,9 @@
   plugins.nvim-cmp = {
     enable = true;
     snippet.expand = "luasnip";
+    completion = {
+      completeopt = "menu,menuone,noinsert,noselect";
+    };
     sources = [
       { name = "nvim_lsp"; }
       { name = "luasnip"; }
@@ -13,25 +16,10 @@
       { name = "buffer"; }
       { name = "cmdline"; }
     ];
-    preselect =
-      "None"; # Don't preselect to avoid tabs completing things prematurely
+    preselect = "None"; # Don't preselect to avoid tabs completing things prematurely
     mappingPresets = [ "insert" ];
     mapping = {
       "<CR>" = "cmp.mapping.confirm({ select = true })";
-      "<Tab>" = {
-        action = ''
-          function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif require("luasnip").expand_or_jumpable() then
-              require("luasnip").expand_or_jump()
-            else
-              fallback()
-            end
-          end
-        '';
-        modes = [ "i" "s" ];
-      };
       "<C-Space>" = "cmp.mapping.complete()";
     };
   };
