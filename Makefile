@@ -1,11 +1,19 @@
+NIX=nix --extra-experimental-features nix-command --extra-experimental-features flakes
+
 check:
 	git add -A
-	nix --extra-experimental-features nix-command --extra-experimental-features flakes flake check .
+	$(NIX) flake check .
 
 fmt:
 	git add -A
-	nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs#nixfmt *.nix config/*.nix
+	$(NIX) run nixpkgs#nixfmt *.nix config/*.nix
 
 run:
 	git add -A
-	nix --extra-experimental-features nix-command --extra-experimental-features flakes run .
+	$(NIX) run .
+
+update:
+	git add -A
+	$(NIX) flake update --commit-lock-file
+
+

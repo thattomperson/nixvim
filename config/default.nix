@@ -6,6 +6,7 @@
       cursorline = true;
       expandtab = true;
       formatoptions = "jcroqlnt";
+      formatexpr = "v:lua.require'conform'.formatexpr()";
       grepformat = "%f:%l:%c:%m";
       grepprg = "rg --vimgrep";
       ignorecase = true;
@@ -47,5 +48,6 @@
     ./theme.nix
     ./telescope.nix
     ./autocmds.nix
+    ./formatting.nix
   ];
 }
