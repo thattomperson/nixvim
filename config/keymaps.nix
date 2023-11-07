@@ -38,5 +38,11 @@
       '';
       lua = true;
     }
+    {
+      mode = [ "t" "n" ];
+      key = "<c-`>";
+      action = "<cmd>ToggleTerm<CR>";
+      options = { desc = "Open terminal"; };
+    }
   ];
 }

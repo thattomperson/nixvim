@@ -17,3 +17,6 @@ update:
 	$(NIX) flake update --commit-lock-file
 
 
+repl:
+	$(NIX) --extra-experimental-features 'flakes repl-flake' repl nixpkgs .
+
