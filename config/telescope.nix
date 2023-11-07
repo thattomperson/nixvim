@@ -2,7 +2,13 @@
   # Telescope:
   plugins.telescope = {
     enable = true;
-    extensions.fzf-native.enable = true;
+    extensions = {
+      fzf-native = {
+        enable = true;
+        caseMode = "smart_case";
+        fuzzy = true;
+      };
+    };
     keymaps = {
       "<leader>fg" = {
         action = "git_files";
