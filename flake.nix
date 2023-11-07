@@ -33,7 +33,6 @@
 
         packages = {
           # Lets you run `nix run .` to start nixvim
-          ripgrep = pkgs.ripgrep;
           default = nvim;
         };
       });

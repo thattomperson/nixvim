@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   # Telescope:
   plugins.telescope = {
     enable = true;
@@ -8,6 +8,17 @@
         caseMode = "smart_case";
         fuzzy = true;
       };
+    };
+    extraOptions = {
+      vimgrep_arguments = [
+        (builtins.concatStringsSep "/" [ pkgs.ripgrep.outPath "bin" "rg" ])
+        "--no-heading"
+        "--with-filename"
+        "--line-number"
+        "--column"
+        "--smart-case"
+        "--trim"
+      ];
     };
     keymaps = {
       "<leader>fg" = {
