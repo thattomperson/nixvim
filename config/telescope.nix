@@ -12,12 +12,12 @@
     extraOptions = {
       vimgrep_arguments = [
         (builtins.concatStringsSep "/" [ pkgs.ripgrep.outPath "bin" "rg" ])
+        "--color=never"
         "--no-heading"
         "--with-filename"
         "--line-number"
         "--column"
         "--smart-case"
-        "--trim"
       ];
     };
     keymaps = {
