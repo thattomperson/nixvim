@@ -39,6 +39,7 @@
       wrap = false;
 
     };
+    luaLoader.enable = true;
   };
   imports = [
     ./bufferline.nix

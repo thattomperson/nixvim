@@ -6,6 +6,8 @@
     enable = true;
     servers.phpactor.enable = true;
     servers.nil_ls.enable = true;
+    servers.tsserver.enable = true;
+
     keymaps = {
       lspBuf = {
         "K" = "hover";
