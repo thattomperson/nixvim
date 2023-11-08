@@ -1,7 +1,4 @@
 { pkgs, ... }: {
-  plugins.bufferline.enable = true;
-  plugins.lspkind.enable = true;
-  plugins.lspsaga.enable = true;
   plugins.lsp = {
     enable = true;
     servers.phpactor.enable = true;
