@@ -5,6 +5,7 @@
     servers.nil_ls.enable = true;
     servers.tsserver.enable = true;
     servers.cssls.enable = true;
+    servers.html.enable = true;
 
     keymaps = {
       lspBuf = {

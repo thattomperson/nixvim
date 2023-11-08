@@ -42,11 +42,10 @@
     luaLoader.enable = true;
   };
   imports = [
-    ./bufferline.nix
+    ./ui.nix
     ./stuff.nix
     ./completion.nix
     ./keymaps.nix
-    ./theme.nix
     ./telescope.nix
     ./autocmds.nix
     ./formatting.nix

@@ -1,4 +1,5 @@
 {
+  colorschemes.catppuccin.enable = true;
   plugins.barbecue.enable = true;
   plugins.noice = {
     enable = true;
