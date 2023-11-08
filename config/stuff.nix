@@ -7,6 +7,7 @@
     servers.phpactor.enable = true;
     servers.nil_ls.enable = true;
     servers.tsserver.enable = true;
+    servers.cssls.enable = true;
 
     keymaps = {
       lspBuf = {
