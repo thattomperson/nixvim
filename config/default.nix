@@ -43,6 +43,7 @@
   };
   imports = [
     ./ui.nix
+    ./lsp.nix
     ./stuff.nix
     ./completion.nix
     ./keymaps.nix
