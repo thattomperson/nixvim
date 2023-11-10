@@ -4,7 +4,9 @@
   plugins.noice = {
     enable = true;
     cmdline.enabled = true;
+    lsp.progress.enabled = false;
   };
+  plugins.fidget.enable = true;
   plugins.lualine = {
     enable = true;
     globalstatus = true;
