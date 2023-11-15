@@ -1,4 +1,4 @@
-NIX=nix --extra-experimental-features nix-command --extra-experimental-features flakes
+NIX=nix --extra-experimental-features 'nix-command flakes repl-flake'
 
 check:
 	git add -A
@@ -18,5 +18,5 @@ update:
 
 
 repl:
-	$(NIX) --extra-experimental-features 'flakes repl-flake' repl nixpkgs .
+	$(NIX) repl nixpkgs .
 
