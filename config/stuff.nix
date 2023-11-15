@@ -6,7 +6,6 @@
     window.position = "float";
   };
   plugins.startify.enable = true;
-  plugins.toggleterm.enable = true;
   plugins.treesitter = {
     enable = true;
     ensureInstalled = "all";

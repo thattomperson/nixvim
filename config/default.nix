@@ -49,6 +49,7 @@
     ./keymaps.nix
     ./telescope.nix
     ./autocmds.nix
+    ./terminal.nix
     ./formatting.nix
   ];
 }
