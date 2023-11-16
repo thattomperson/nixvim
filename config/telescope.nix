@@ -10,15 +10,17 @@
       };
     };
     extraOptions = {
-      vimgrep_arguments = [
-        (builtins.concatStringsSep "/" [ pkgs.ripgrep.outPath "bin" "rg" ])
-        "--color=never"
-        "--no-heading"
-        "--with-filename"
-        "--line-number"
-        "--column"
-        "--smart-case"
-      ];
+      defaults = {
+        vimgrep_arguments = [
+          "${pkgs.ripgrep}/bin/rg"
+          "--color=never"
+          "--no-heading"
+          "--with-filename"
+          "--line-number"
+          "--column"
+          "--smart-case"
+        ];
+      };
     };
     keymaps = {
       "<leader>fg" = {
