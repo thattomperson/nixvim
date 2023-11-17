@@ -51,5 +51,6 @@
     ./autocmds.nix
     ./terminal.nix
     ./formatting.nix
+    ./linting.nix
   ];
 }

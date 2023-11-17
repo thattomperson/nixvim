@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  #### Formatting
   plugins.conform-nvim = {
     enable = true;
     formatters = {
@@ -12,34 +13,53 @@
       nix = [ "nixfmt" ];
       "*" = [ "codespell" ];
     };
-    formatOnSave = {
-      lspFallback = true;
-      timeoutMs = 500;
+
+    extraOptions = {
+      format_on_save = {
+        __raw = ''
+          function(bufnr)
+            -- Disable with a global or buffer-local variable
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+              return
+            end
+            return { timeout_ms = 500, lsp_fallback = true }
+          end
+        '';
+      };
     };
   };
 
-  autoGroups = { Linting = { clear = true; }; };
-
-  autoCmd = [{
-    event = [ "BufWritePost" "InsertLeave" ];
-    callback = { __raw = "function () require('lint').try_lint() end"; };
-    group = "Linting";
-  }];
+  userCommands = {
+    FormatDisable = {
+      command = "lua _format_disable()<CR>";
+      desc = "Disable autoformat-on-save";
+      # bang = true;
+    };
+    FormatEnable = {
+      command = "lua _format_enable()<CR>";
+      desc = "Re-enable autoformat-on-save";
+    };
+    Format = {
+      command =
+        "lua require('conform').format({ timeout_ms = 500, lsp_fallback = true })<CR>";
+      desc = "Autoformat this file";
+    };
+  };
 
   extraConfigLua = ''
-    require('lint').linters_by_ft = {
-      php = { "phpcs", "codespell", },
-      json = { "jsonlint", "codespell", },
-      javascript = { "eslint_d", "codespell", },
-      javascriptreact = { "eslint_d", "codespell", },
-      typescript = { "eslint_d", "codespell", },
-      typescriptreact = { "eslint_d", "codespell", },
-    }
-    require('lint').linters.phpcs.cmd = '${pkgs.php82Packages.phpcs}/bin/phpcs'
-    require('lint').linters.codespell.cmd = '${pkgs.codespell}/bin/codespell'
-    require('lint').linters.eslint_d.cmd = '${pkgs.nodePackages.eslint_d}/bin/eslint_d'
-    require('lint').linters.jsonlint.cmd = '${pkgs.nodePackages.jsonlint}/bin/jsonlint'
-  '';
+    function _format_enable()
+      vim.b.disable_autoformat = false
+      vim.g.disable_autoformat = false
+    end
 
-  extraPlugins = with pkgs.vimPlugins; [ nvim-lint ];
+    function _format_disable() 
+      --if v:operator == "!" then
+        -- FormatDisable! will disable formatting just for this buffer
+        --vim.b.disable_autoformat = true
+      --else
+        vim.g.disable_autoformat = true
+      --end
+    end
+
+  '';
 }
