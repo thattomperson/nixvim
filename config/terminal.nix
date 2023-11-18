@@ -1,10 +1,10 @@
-{
+{ pkgs, ... }: {
   plugins.toggleterm.enable = true;
 
   extraConfigLua = ''
     local Terminal  = require('toggleterm.terminal').Terminal
     local lazygit = Terminal:new({
-      cmd = "lazygit",
+      cmd = "${pkgs.lazygit}/bin/lazygit",
       hidden = true,
       direction = "float",
 
