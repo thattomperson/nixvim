@@ -50,7 +50,6 @@
     ./telescope.nix
     ./autocmds.nix
     ./terminal.nix
-    ./none-ls.nix
     ./formatting.nix
     # ./linting.nix
   ];
