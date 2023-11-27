@@ -16,5 +16,5 @@
     showHidden = true;
     patterns = [ ".git" ];
   };
-  extraPlugins = with pkgs.vimPlugins; [ vim-sleuth ];
+  extraPlugins = with pkgs.vimPlugins; [ vim-sleuth vim-dadbod-ui ];
 }
