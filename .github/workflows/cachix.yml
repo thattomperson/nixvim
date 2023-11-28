@@ -1,18 +1,25 @@
-name: "Test"
+# Publish the Nix flake outputs to Cachix
+name: Cachix
 on:
-  pull_request:
   push:
+    branches:
+      - main
 jobs:
-  tests:
+  publish:
+    name: Publish Flake
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: cachix/install-nix-action@v20
-      with:
-        nix_path: nixpkgs=channel:nixos-unstable
-    - uses: cachix/cachix-action@v12
+    - name: Checkout sources
+      uses: actions/checkout@v4
+
+    - name: Install nix
+      uses: cachix/install-nix-action@v23
+
+    - name: Authenticate with Cachix
+      uses: cachix/cachix-action@v12
       with:
         name: thattomperson-nixvim
-        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix-build
-    - run: nix-shell --run "echo OK"
+        authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+    - name: Build nix flake
+      run: nix build -L
