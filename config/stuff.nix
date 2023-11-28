@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   plugins.comment-nvim.enable = true;
   plugins.gitsigns.enable = true;
+  plugins.gitblame.enable = true;
   plugins.neo-tree = {
     enable = true;
     window.position = "float";
