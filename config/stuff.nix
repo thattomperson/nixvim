@@ -4,7 +4,6 @@
   plugins.gitblame.enable = true;
   plugins.indent-blankline = {
     enable = true;
-    filteredItems.visible = true;
     exclude.filetypes = [
       "lspinfo"
       "packer"
@@ -20,6 +19,7 @@
   };
   plugins.neo-tree = {
     enable = true;
+    filesystem.filteredItems.visible = true;
     window.position = "float";
   };
   plugins.startify.enable = true;
