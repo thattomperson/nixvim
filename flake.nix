@@ -1,6 +1,12 @@
 {
   description = "A nixvim configuration";
 
+  nixConfig = {
+    extra-substituters = "https://thattomperson-nixvim.cachix.org";
+    extra-trusted-public-keys =
+      "thattomperson-nixvim.cachix.org-1:a9X7BbUQi5vocNxqWSdxouUXHSOaAsnfUm+DecB/JhI=";
+  };
+
   inputs = {
     nixvim.url = "github:thattomperson/nixvim-contrib";
     flake-utils.url = "github:numtide/flake-utils";
