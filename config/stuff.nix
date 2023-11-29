@@ -1,12 +1,10 @@
 { pkgs, ... }: {
   plugins.comment-nvim.enable = true;
   plugins.gitsigns.enable = true;
-  plugins.gitblame.enable = true;
-  plugins.indent-blankline = {
+  plugins.gitblame = {
     enable = true;
-    exclude.filetypes = [
+    ignoredFiletypes = [
       "lspinfo"
-      "packer"
       "checkhealth"
       "help"
       "man"
@@ -15,6 +13,22 @@
       "TelescopeResults"
       "''"
       "startify"
+      "toggleterm"
+    ];
+  };
+  plugins.indent-blankline = {
+    enable = true;
+    exclude.filetypes = [
+      "lspinfo"
+      "checkhealth"
+      "help"
+      "man"
+      "gitcommit"
+      "TelescopePrompt"
+      "TelescopeResults"
+      "''"
+      "startify"
+      "toggleterm"
     ];
   };
   plugins.neo-tree = {
