@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   plugins.comment-nvim.enable = true;
   plugins.gitsigns.enable = true;
+  plugins.zig.enable = true;
   plugins.gitblame = {
     enable = true;
     ignoredFiletypes = [
