@@ -4,10 +4,10 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = "<cmd>Neotree toggle<CR>";
+      action = "<cmd>Oil --float<CR>";
       options = {
         silent = true;
-        desc = "Open Neo-Tree";
+        desc = "Open FileTree";
       };
     }
     {

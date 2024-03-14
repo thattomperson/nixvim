@@ -31,21 +31,21 @@
       "toggleterm"
     ];
   };
-  plugins.neo-tree = {
+  plugins.oil = {
     enable = true;
+    viewOptions = { showHidden = true; };
+    keymaps = { qq = "actions.close"; };
+  };
+  plugins.neo-tree = {
+    enable = false;
     filesystem.filteredItems.visible = true;
     window.position = "float";
   };
-  plugins.startify.enable = true;
+  plugins.alpha.enable = true;
   plugins.treesitter = {
     enable = true;
-    ensureInstalled = "all";
+    ensureInstalled = [ "php" "css" "html" "typescript" "nix" ];
   };
   plugins.which-key.enable = true;
-  plugins.project-nvim = {
-    enable = true;
-    showHidden = true;
-    patterns = [ ".git" ];
-  };
-  extraPlugins = with pkgs.vimPlugins; [ vim-sleuth vim-dadbod-ui ];
+  extraPlugins = with pkgs.vimPlugins; [ vim-sleuth ];
 }
