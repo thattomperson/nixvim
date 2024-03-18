@@ -31,17 +31,6 @@
       "toggleterm"
     ];
   };
-  plugins.oil = {
-    enable = true;
-    viewOptions = { showHidden = true; };
-    keymaps = { qq = "actions.close"; };
-  };
-  plugins.neo-tree = {
-    enable = false;
-    filesystem.filteredItems.visible = true;
-    window.position = "float";
-  };
-  plugins.alpha.enable = true;
   plugins.treesitter = {
     enable = true;
     ensureInstalled = [ "php" "css" "html" "typescript" "nix" ];

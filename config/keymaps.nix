@@ -4,7 +4,7 @@
     {
       mode = "n";
       key = "<leader>e";
-      action = "<cmd>Oil --float<CR>";
+      action = "<cmd>lua MiniFiles.open()<CR>";
       options = {
         silent = true;
         desc = "Open FileTree";
@@ -27,22 +27,6 @@
         silent = true;
         desc = "Find Files";
       };
-    }
-    {
-      mode = "t";
-      key = "<ESC><ESC>";
-      action = ''
-        function()
-          require('toggleterm.ui').stopinsert()
-        end
-      '';
-      lua = true;
-    }
-    {
-      mode = [ "t" "n" ];
-      key = "<c-`>";
-      action = "<cmd>ToggleTerm<CR>";
-      options = { desc = "Open terminal"; };
     }
   ];
 }

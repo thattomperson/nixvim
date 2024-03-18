@@ -5,11 +5,9 @@
     formatters = {
       codespell.command = "${pkgs.codespell}/bin/codespell";
       nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
-      phpcbf.command = "${pkgs.php82Packages.phpcbf}/bin/phpcbf";
       eslint_d.command = "${pkgs.nodePackages.eslint_d}/bin/eslint_d";
     };
     formattersByFt = {
-      php = [ "phpcbf" ];
       nix = [ "nixfmt" ];
       "*" = [ "codespell" ];
     };
