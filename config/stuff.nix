@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  plugins.comment-nvim.enable = true;
+  plugins.comment.enable = true;
   plugins.gitsigns.enable = true;
   plugins.gitblame = {
     enable = true;
@@ -18,18 +18,20 @@
   };
   plugins.indent-blankline = {
     enable = true;
-    exclude.filetypes = [
-      "lspinfo"
-      "checkhealth"
-      "help"
-      "man"
-      "gitcommit"
-      "TelescopePrompt"
-      "TelescopeResults"
-      "''"
-      "startify"
-      "toggleterm"
-    ];
+    settings = {
+      exclude.filetypes = [
+        "lspinfo"
+        "checkhealth"
+        "help"
+        "man"
+        "gitcommit"
+        "TelescopePrompt"
+        "TelescopeResults"
+        "''"
+        "startify"
+        "toggleterm"
+      ];
+    };
   };
   plugins.treesitter = {
     enable = true;

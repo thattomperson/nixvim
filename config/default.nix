@@ -1,6 +1,7 @@
-{ self, pkgs, ... }: {
+{ self, pkgs, package, ... }: {
   config = {
-    options = {
+    package = package;
+    opts = {
       number = true;
       relativenumber = true;
       cursorline = true;

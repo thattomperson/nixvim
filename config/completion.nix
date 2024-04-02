@@ -1,22 +1,24 @@
 {
   # Completion
-  plugins.nvim-cmp = {
+  plugins.cmp = {
     enable = true;
-    snippet.expand = "luasnip";
-    completion = { completeopt = "menu,menuone"; };
-    sources = [
-      { name = "nvim_lsp"; }
-      { name = "luasnip"; }
-      { name = "buffer"; }
-      { name = "nvim_lua"; }
-      { name = "path"; }
-    ];
-    preselect =
-      "None"; # Don't preselect to avoid tabs completing things prematurely
-    mappingPresets = [ "insert" ];
-    mapping = {
-      "<CR>" = "cmp.mapping.confirm({ select = true })";
-      "<C-Space>" = "cmp.mapping.complete()";
+    settings = {
+      #    snippet.expand = "luasnip";
+      completion = { completeopt = "menu,menuone"; };
+      #    sources = [
+      #      { name = "nvim_lsp"; }
+      #      { name = "luasnip"; }
+      #      { name = "buffer"; }
+      #      { name = "nvim_lua"; }
+      #      { name = "path"; }
+      #    ];
+      #    preselect =
+      #      "None"; # Don't preselect to avoid tabs completing things prematurely
+      #    mappingPresets = [ "insert" ];
+      mapping = {
+        "<CR>" = "cmp.mapping.confirm({ select = true })";
+        "<C-Space>" = "cmp.mapping.complete()";
+      };
     };
   };
 
