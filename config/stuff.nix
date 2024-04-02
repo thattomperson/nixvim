@@ -33,6 +33,7 @@
   };
   plugins.treesitter = {
     enable = true;
+    indent = true;
     ensureInstalled = [ "php" "css" "html" "typescript" "nix" ];
   };
   plugins.which-key.enable = true;
