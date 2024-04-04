@@ -3,6 +3,7 @@
     enable = true;
     servers.phpactor.enable = true;
     servers.nil_ls.enable = true;
+    servers.eslint.enable = true;
     servers.tsserver.enable = true;
     servers.cssls.enable = true;
     servers.html.enable = true;
