@@ -13,6 +13,12 @@
         { name = "nvim_lua"; }
         { name = "path"; }
       ];
+
+      snippet.expand = ''
+        function(args)
+          require('luasnip').lsp_expand(args.body)
+        end
+      '';
       #    preselect =
       #      "None"; # Don't preselect to avoid tabs completing things prematurely
       #    mappingPresets = [ "insert" ];
@@ -20,11 +26,13 @@
       mapping = {
         "<CR>" = "cmp.mapping.confirm({ select = true })";
         "<C-Space>" = "cmp.mapping.complete()";
+        "<Down>" = "cmp.mapping.select_next_item()";
+        "<Up>" = "cmp.mapping.select_prev_item()";
       };
     };
   };
 
-  # plugins.luasnip.enable = true;
+  plugins.luasnip.enable = true;
   # plugins.cmp_luasnip.enable = true;
   # plugins.cmp-buffer.enable = true;
   # plugins.cmp-path.enable = true;
