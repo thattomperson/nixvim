@@ -5,11 +5,13 @@
     extensions = {
       fzf-native = {
         enable = true;
-        caseMode = "smart_case";
-        fuzzy = true;
+        settings = {
+          caseMode = "smart_case";
+          fuzzy = true;
+        };
       };
     };
-    extraOptions = {
+    settings = {
       defaults = {
         vimgrep_arguments = [
           "${pkgs.ripgrep}/bin/rg"
@@ -25,19 +27,19 @@
     keymaps = {
       "<leader>fg" = {
         action = "git_files";
-        desc = "Telescope Git Files";
+        options.desc = "Telescope Git Files";
       };
       "<leader>ff" = {
         action = "find_files";
-        desc = "Telescope Find Files";
+        options.desc = "Telescope Find Files";
       };
       "<leader>/" = {
         action = "live_grep";
-        desc = "Telescope Live Grep";
+        options.desc = "Telescope Live Grep";
       };
       "<leader><space>" = {
         action = "buffers";
-        desc = "Telescope Buffers";
+        options.desc = "Telescope Buffers";
       };
     };
   };
