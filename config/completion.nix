@@ -5,7 +5,9 @@
     autoEnableSources = true;
     settings = {
       #    snippet.expand = "luasnip";
-      completion = { completeopt = "menu,menuone"; };
+      completion = {
+        completeopt = "menu,menuone";
+      };
       sources = [
         { name = "nvim_lsp"; }
         { name = "luasnip"; }

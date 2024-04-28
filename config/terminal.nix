@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   plugins.toggleterm.enable = true;
 
   extraConfigLua = ''
@@ -31,7 +32,9 @@
       action = "<cmd>Lazygit<CR>";
       key = "<leader>g";
       mode = "n";
-      options = { desc = "Open Lazygit in a floating terminal"; };
+      options = {
+        desc = "Open Lazygit in a floating terminal";
+      };
     }
     {
       mode = "t";
@@ -44,10 +47,15 @@
       lua = true;
     }
     {
-      mode = [ "t" "n" ];
+      mode = [
+        "t"
+        "n"
+      ];
       key = "<c-`>";
       action = "<cmd>ToggleTerm<CR>";
-      options = { desc = "Open terminal"; };
+      options = {
+        desc = "Open terminal";
+      };
     }
   ];
 }

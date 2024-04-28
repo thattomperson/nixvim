@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   colorschemes.catppuccin.enable = true;
   plugins.barbecue.enable = false;
   extraPlugins = [ pkgs.vimPlugins.dropbar-nvim ];

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   plugins.comment.enable = true;
   plugins.gitsigns.enable = true;
   plugins.gitblame = {
@@ -36,7 +37,20 @@
   plugins.treesitter = {
     enable = true;
     indent = true;
-    ensureInstalled = [ "php" "css" "html" "typescript" "nix" ];
+    folding = true;
+    grammarPackages = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+      php
+      phpdoc
+      comment
+      css
+      scss
+      sql
+      html
+      typescript
+      nix
+      markdown
+      xml
+    ];
   };
   plugins.which-key.enable = true;
   extraPlugins = with pkgs.vimPlugins; [ vim-sleuth ];

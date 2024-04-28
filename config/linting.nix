@@ -1,11 +1,23 @@
-{ pkgs, ... }: {
-  autoGroups = { Linting = { clear = true; }; };
+{ pkgs, ... }:
+{
+  autoGroups = {
+    Linting = {
+      clear = true;
+    };
+  };
 
-  autoCmd = [{
-    event = [ "BufWritePost" "InsertLeave" ];
-    callback = { __raw = "function () require('lint').try_lint() end"; };
-    group = "Linting";
-  }];
+  autoCmd = [
+    {
+      event = [
+        "BufWritePost"
+        "InsertLeave"
+      ];
+      callback = {
+        __raw = "function () require('lint').try_lint() end";
+      };
+      group = "Linting";
+    }
+  ];
 
   extraConfigLua = ''
     require('lint').linters_by_ft = {
