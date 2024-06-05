@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   #### Formatting
   plugins.conform-nvim = {
     enable = true;
@@ -38,8 +39,7 @@
       desc = "Re-enable autoformat-on-save";
     };
     Format = {
-      command =
-        "lua require('conform').format({ timeout_ms = 500, lsp_fallback = true })<CR>";
+      command = "lua require('conform').format({ timeout_ms = 500, lsp_fallback = true })<CR>";
       desc = "Autoformat this file";
     };
   };

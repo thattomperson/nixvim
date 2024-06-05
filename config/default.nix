@@ -1,4 +1,10 @@
-{ self, pkgs, package, ... }: {
+{
+  self,
+  pkgs,
+  package,
+  ...
+}:
+{
   config = {
     package = package;
     opts = {
@@ -18,7 +24,12 @@
       pumblend = 10;
       pumheight = 10;
       scrolloff = 4;
-      sessionoptions = [ "buffers" "curdir" "tabpages" "winsize" ];
+      sessionoptions = [
+        "buffers"
+        "curdir"
+        "tabpages"
+        "winsize"
+      ];
       shiftround = true;
       shiftwidth = 2;
       showmode = false;
@@ -38,7 +49,6 @@
       wildmode = "longest:full,full";
       winminwidth = 5;
       wrap = false;
-
     };
     luaLoader.enable = true;
   };
