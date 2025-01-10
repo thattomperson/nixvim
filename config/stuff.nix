@@ -4,18 +4,20 @@
   plugins.gitsigns.enable = true;
   plugins.gitblame = {
     enable = true;
-    ignoredFiletypes = [
-      "lspinfo"
-      "checkhealth"
-      "help"
-      "man"
-      "gitcommit"
-      "TelescopePrompt"
-      "TelescopeResults"
-      "''"
-      "startify"
-      "toggleterm"
-    ];
+    settings = {
+      ignored_filetypes = [
+        "lspinfo"
+        "checkhealth"
+        "help"
+        "man"
+        "gitcommit"
+        "TelescopePrompt"
+        "TelescopeResults"
+        "''"
+        "startify"
+        "toggleterm"
+      ];
+    };
   };
   plugins.indent-blankline = {
     enable = true;
@@ -36,21 +38,43 @@
   };
   plugins.treesitter = {
     enable = true;
-    indent = true;
+    settings = {
+      auto_install = true;
+      ensure_installed = [
+        "php"
+        "phpdoc"
+        "comment"
+        "css"
+        "scss"
+        "sql"
+        "html"
+        "typescript"
+        "nix"
+        "markdown"
+        "xml"
+      ];
+      indent.enable = true;
+    };
     folding = true;
-    grammarPackages = with pkgs.vimPlugins.nvim-treesitter-parsers; [
-      php
-      phpdoc
-      comment
-      css
-      scss
-      sql
-      html
-      typescript
-      nix
-      markdown
-      xml
-    ];
+  };
+  plugins.treesitter-context = {
+    enable = true;
+    settings = {
+      line_numbers = true;
+      max_lines = 0;
+      min_window_height = 0;
+      mode = "topline";
+      multiline_threshold = 20;
+      separator = "-";
+      trim_scope = "inner";
+      zindex = 20;
+    };
+  };
+  plugins.treesitter-refactor = {
+    enable = true;
+    highlightCurrentScope.enable = true;
+    highlightDefinitions.enable = true;
+    smartRename.enable = true;
   };
   plugins.which-key.enable = true;
   extraPlugins = with pkgs.vimPlugins; [ vim-sleuth ];

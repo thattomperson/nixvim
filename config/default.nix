@@ -9,6 +9,7 @@
     package = package;
     opts = {
       number = true;
+      foldmethod = "expr";
       relativenumber = true;
       cursorline = true;
       expandtab = true;

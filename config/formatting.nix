@@ -3,17 +3,17 @@
   #### Formatting
   plugins.conform-nvim = {
     enable = true;
-    formatters = {
-      codespell.command = "${pkgs.codespell}/bin/codespell";
-      nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
-      eslint_d.command = "${pkgs.nodePackages.eslint_d}/bin/eslint_d";
-    };
-    formattersByFt = {
-      nix = [ "nixfmt" ];
-      "*" = [ "codespell" ];
-    };
+    settings = {
+      formatters = {
+        codespell.command = "${pkgs.codespell}/bin/codespell";
+        nixfmt.command = "${pkgs.nixfmt}/bin/nixfmt";
+        eslint_d.command = "${pkgs.nodePackages.eslint_d}/bin/eslint_d";
+      };
+      formatters_by_ft = {
+        nix = [ "nixfmt" ];
+        "*" = [ "codespell" ];
+      };
 
-    extraOptions = {
       format_on_save = {
         __raw = ''
           function(bufnr)

@@ -4,6 +4,7 @@
   plugins.barbecue.enable = false;
   extraPlugins = [ pkgs.vimPlugins.dropbar-nvim ];
   plugins = {
+    web-devicons.enable = true;
     mini = {
       enable = true;
       modules = {
@@ -15,8 +16,11 @@
   };
   plugins.noice = {
     enable = true;
-    cmdline.enabled = true;
-    lsp.progress.enabled = false;
+  
+    settings = {
+      cmdline.enabled = true;
+      lsp.progress.enabled = false;
+    };
   };
   plugins.fidget.enable = true;
 }
