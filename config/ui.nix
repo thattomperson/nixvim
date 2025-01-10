@@ -8,7 +8,12 @@
     mini = {
       enable = true;
       modules = {
-        files = { };
+        files = {
+          windows = {
+            preview = true;
+            width_preview = 80;
+          };
+        };
         statusline = { };
         starter = { };
       };

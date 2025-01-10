@@ -39,12 +39,11 @@
     {
       mode = "t";
       key = "<ESC><ESC>";
-      action = ''
+      action.__raw = ''
         function()
           require('toggleterm.ui').stopinsert()
         end
       '';
-      lua = true;
     }
     {
       mode = [
