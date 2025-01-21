@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   plugins.comment.enable = true;
   plugins.gitsigns.enable = true;
   plugins.gitblame = {
@@ -72,7 +71,7 @@
   };
   plugins.treesitter-refactor = {
     enable = true;
-    highlightCurrentScope.enable = true;
+    # highlightCurrentScope.enable = true;
     highlightDefinitions.enable = true;
     smartRename.enable = true;
   };
